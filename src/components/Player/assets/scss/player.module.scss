@@ -1,0 +1,669 @@
+@import "./playerVariables";
+@import "./player_global";
+@import "../../../../assets/scss/sub-stylesheet/mixins";
+
+.player {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: $background;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  .m10_fade,
+  .p10_fade,
+  .middle_icons {
+    z-index: 10 !important;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .m10_fade,
+  .p10_fade {
+    width: 5%;
+    min-width: 40px;
+    aspect-ratio: 1;
+    top: 50%;
+    background: $light-lt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 1;
+    border-radius: 1000px;
+    z-index: 14 !important;
+
+    &:active {
+      filter: contrast(60%);
+    }
+
+    svg {
+      width: 70%;
+      height: 70%;
+    }
+  }
+
+  .m10_fade {
+    left: 0;
+    transform: translate(100%, -50%);
+  }
+
+  .p10_fade {
+    right: 0;
+    transform: translate(-100%, -50%);
+  }
+
+  .middle_icons {
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 1;
+    position: relative;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-45%, -50%);
+    }
+  }
+
+  .play_pause_fade {
+    opacity: 1;
+    @include breakpoint(md) {
+      opacity: 0;
+      animation: paly_pause_fade 1s ease;
+    }
+  }
+
+  .title {
+    color: $light;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    padding: 0 10px;
+    display: none;
+
+    @include breakpoint(md) {
+      display: block;
+      max-width: 300px;
+    }
+
+    @include breakpoint(lg) {
+      display: block;
+      max-width: 450px;
+    }
+  }
+
+  .player_Logo {
+    max-width: 200px;
+    width: 100%;
+  }
+
+  .middle_volume {
+    svg {
+      position: initial;
+      transform: none !important;
+    }
+  }
+
+  .video_palyer,
+  .top_menu,
+  .bottom_menu {
+    position: absolute;
+    width: 100%;
+  }
+
+  .video_palyer {
+    width: 100% !important;
+    background: $background;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .top_menu,
+  .bottom_menu {
+    padding: 0.5rem;
+    color: $light;
+    z-index: 15 !important;
+
+    svg {
+      $fontSize: 14px;
+      width: $fontSize;
+      height: $fontSize;
+
+      @include breakpoint(max-mobile) {
+        $fontSize: 14px;
+        width: $fontSize;
+        height: $fontSize;
+      }
+
+      @include breakpoint(mobile) {
+        $fontSize: 18px;
+        width: $fontSize;
+        height: $fontSize;
+      }
+
+      @include breakpoint(sm) {
+        $fontSize: 26px;
+        width: $fontSize;
+        height: $fontSize;
+      }
+
+      @include breakpoint(max-sm) {
+        $fontSize: 26px;
+        width: $fontSize;
+        height: $fontSize;
+      }
+
+      @include breakpoint(md) {
+        $fontSize: 34px;
+        width: $fontSize;
+        height: $fontSize;
+      }
+
+      @include breakpoint(lg) {
+        $fontSize: 44px;
+        width: $fontSize;
+        height: $fontSize;
+      }
+
+      @include breakpoint(xl) {
+        $fontSize: 54px;
+        width: $fontSize;
+        height: $fontSize;
+      }
+    }
+  }
+
+  .bottom_menu {
+    bottom: 0;
+  }
+
+  .top_menu {
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: $space;
+  }
+
+  .player_button {
+    padding: $space;
+    background: none;
+    border-radius: 1000px;
+    transition: background 0.2s linear;
+    backdrop-filter: blur(3px);
+
+    svg {
+      transition: transform 0.2s linear;
+    }
+
+    &:hover {
+      svg {
+        transform: scale(1.2);
+        transform-origin: center center;
+      }
+    }
+  }
+
+  .mkv_download {
+    position: absolute;
+    z-index: 100000000000;
+    height: 100%;
+    width: 100%;
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    * {
+      color: white;
+    }
+
+    .mkv_title {
+      font-size: 22px;
+      font-size: 600;
+
+      @include breakpoint(md) {
+        font-size: 28px;
+      }
+
+      @include breakpoint(lg) {
+        font-size: 36px;
+      }
+
+      * {
+        font-size: 22px;
+
+        @include breakpoint(md) {
+          font-size: 28px;
+        }
+
+        @include breakpoint(lg) {
+          font-size: 36px;
+        }
+      }
+
+      .mark {
+        color: $primary;
+      }
+    }
+
+    .download {
+      cursor: pointer;
+      background: #ff000010;
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px dashed $primary;
+      text-align: center;
+      margin-top: 10px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: #ff000050;
+      }
+
+      @include breakpoint(md) {
+        margin-top: 15px;
+      }
+
+      @include breakpoint(lg) {
+        margin-top: 20px;
+      }
+
+      .icon {
+        svg {
+          font-size: 22px;
+
+          @include breakpoint(md) {
+            font-size: 32px;
+          }
+
+          @include breakpoint(lg) {
+            font-size: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .middle_play_button {
+    aspect-ratio: 1;
+    background: $primary;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+
+    @include breakpoint(sm) {
+      width: 60px;
+    }
+
+    @include breakpoint(md) {
+      width: 70px;
+    }
+
+    @include breakpoint(lg) {
+      width: 80px;
+    }
+
+    svg {
+      height: 70% !important;
+      width: 70% !important;
+      transform: translate(-45%, -50%) !important;
+    }
+  }
+
+  .video_thumb_area {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+
+    .video_slider {
+      width: auto !important;
+      flex-grow: 1;
+
+      .rc-slider-rail {
+        background: $light-lt;
+      }
+    }
+  }
+
+  .player_controll {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: $space * 3;
+    padding-top: $space * 3;
+    justify-content: space-between;
+    z-index: 20;
+
+    @include breakpoint(mobile) {
+      justify-content: center;
+    }
+
+    .part_1,
+    .part_2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .part_1 {
+      .volumeContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  /** NEXT EPISODE CARD */
+
+  .nextEpisodeArea {
+    display: inline-flex;
+    cursor: pointer;
+    .nextEpisode {
+      position: absolute;
+      bottom: 100%;
+      right: 0%;
+      width: 100%;
+      border: 2px solid $light;
+
+      @include breakpoint(sm) {
+        width: 500px;
+      }
+
+      .card_header {
+        background: $dark;
+        box-shadow: 0 5px 5px 0 $background;
+
+        * {
+          color: $light;
+        }
+      }
+
+      .card_body {
+        background: $dark-lt;
+
+        * {
+          color: $light;
+        }
+      }
+    }
+  }
+
+  /** SEASON EPISODE*/
+
+  .episode_card {
+    background: $dark-lt;
+    cursor: pointer;
+
+    .card_header {
+      cursor: pointer;
+
+      .active {
+        background: $dark-lt;
+      }
+
+      * {
+        background: $dark;
+        color: $light;
+      }
+    }
+
+    .card_body {
+      * {
+        color: $light;
+      }
+    }
+  }
+
+  .season_episode_pop_up {
+    width: 100%;
+    max-width: 500px;
+    background: $dark;
+
+    .S0E0 {
+      padding: 0 $space * 2 $space * 2 $space * 2;
+      max-height: 70vh;
+      height: 100%;
+      overflow-y: scroll;
+      overflow-x: clip;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  /** TV SERIES PLAYLIST */
+  .playList {
+    .season_episode_pop_up {
+      position: absolute;
+      bottom: 85%;
+      right: 0;
+    }
+  }
+
+  .player_btn {
+    color: $light !important;
+    background: $dark-lt !important;
+    border: none !important;
+    font-weight: 600;
+    padding: $space * 3 !important;
+    &:hover {
+      background: $dark !important;
+      color: darken($light, 0.4) !important;
+    }
+  }
+
+  /** PLAYER BUFFER, BEFORE READY, PAUSE, LOADING */
+  .player_backdrop_image {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .paused_content_section {
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: none;
+
+    @include breakpoint(sm) {
+      display: none;
+    }
+
+    @include breakpoint(md) {
+      display: flex;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: #00000099;
+      transform: translate(-50%, -50%);
+      align-items: center;
+    }
+
+    .paused_content_wrapper {
+      width: 100%;
+      max-width: 1680px;
+      padding: 1rem;
+      margin: 0 auto;
+
+      * {
+        color: $light;
+        margin: 0;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .story {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .title {
+        font-size: 32px;
+        text-align: left;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        li {
+          font-weight: 700;
+          font-size: 22px;
+        }
+      }
+
+      @include breakpoint(md) {
+        p {
+          font-size: 18px;
+        }
+
+        .story {
+          width: 60%;
+        }
+
+        .title {
+          font-size: 46px;
+        }
+      }
+    }
+  }
+
+  .no_internet_page {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background-color: #00000099;
+    z-index: 20;
+    padding: 0 10px;
+
+    * {
+      color: $light;
+    }
+
+    p {
+      font-size: 22px;
+      width: 100%;
+      text-align: center;
+
+      @include breakpoint(md) {
+        width: 60%;
+      }
+    }
+  }
+
+  .playBackSpeed_area {
+    .speed_slider_wrapper {
+      background: $dark;
+      width: 100%;
+      max-width: 500px;
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      padding: $space * 5 $space * 6 $space * 8 $space * 6;
+
+      * {
+        color: $light;
+      }
+    }
+  }
+}
+
+.on_hide {
+  opacity: 1;
+  transition: opacity 0.3s linear;
+
+  &.active {
+    opacity: 0;
+  }
+}
+
+/**
+PLAYER ANIMATIONS
+*/
+@keyframes fade_duration {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes paly_pause_fade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(2);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

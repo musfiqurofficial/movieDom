@@ -1,0 +1,47 @@
+// ----> VARIABLES <----
+@import './variables.scss';
+$offcanvas-bg-color: $dark;
+$offcanvas-color: $highlight;
+
+$modal-content-bg:$dark;
+
+// [-----> BOOTSTRAP <-----]
+@import "~bootstrap/scss/bootstrap";
+ html,body{
+    background:$dark;
+ }
+
+
+// // -----> RESET <-----
+@import './components/common/reset.scss';
+// // ----> VARIABLES <----
+@import './variables.scss';
+
+// // ----> FUNTIONS <--> BREAKPOINT <----
+@import './functions/breakpoint.scss';
+
+
+// // ----> UTILS <----
+@import './utils/colors.scss';
+@import './utils/font.scss';
+@import './utils/spacing.scss';
+@import './utils/position.scss';
+@import './utils/sizing.scss';
+@import './utils/ratio.scss';
+@import './utils/object.scss';
+@import './utils/background.scss';
+@import './utils/display.scss';
+@import './utils/transform.scss';
+@import './utils/other_utils.scss';
+
+// // |----> COMPONENTS <----|
+@import './components/components.scss';
+
+// [----> SVG ANIMATION <---]
+@import './components/SVG_Animation/svg.animation.scss';
+
+// [----> FORM <---]
+@import './components/form/form.scss';
+
+// [----> TABLE <---]
+@import './components/table/table.scss';

@@ -1,0 +1,134 @@
+@import "./variables";
+@import "./mixins";
+@import "./global";
+
+//?=== footer area css start ===?
+.footer-area {
+  position: relative;
+  padding: 110px 0;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background: url(../../images/footer/footer-bg.jpg);
+  .foot-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-color: $theme-color;
+  }
+  .flex-parent {
+    position: relative;
+    display: flex;
+    z-index: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    .flex-child {
+      a {
+        img {
+          width: 200px;
+          margin-bottom: 60px;
+        }
+      }
+      p {
+        margin-bottom: 15px;
+        color: $light;
+        a {
+          color: $light;
+          font-size: 18px;
+        }
+      }
+      h4 {
+        font-size: 18px;
+        color: $light;
+        font-weight: bold;
+        text-transform: capitalize;
+        margin-bottom: 30px;
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li {
+          margin-bottom: 5px;
+          a {
+            font-size: 14px;
+            color: #abb7c4;
+            position: relative;
+            font-weight: 400;
+            text-transform: none;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+              color: $light;
+              &::after {
+                left: 0;
+                right: auto;
+                width: 100%;
+              }
+            }
+            &::after {
+              @extend %absolute;
+              top: 100%;
+              left: auto;
+              right: 0;
+              width: 0;
+              height: 1.5px;
+              background: $primary-color;
+              transition: all 0.3s ease-in-out;
+            }
+          }
+        }
+      }
+      form {
+        margin-bottom: 20px;
+        input {
+          font-size: 12px;
+          color: $light;
+          font-weight: 300;
+          height: 38px;
+          padding: 5px;
+          width: 100%;
+          text-transform: none;
+          background-color: $black-color;
+          border: 0.5px solid $light;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px;
+          background: url(../../images/footer/search-bg.png) no-repeat right
+            20px center;
+        }
+      }
+      a.btn {
+        font-size: 14px;
+        color: #dd003f;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+.ft-copyright {
+  display: flex;
+  padding: 20px 0;
+  opacity: 0.7;
+  justify-content: center;
+  background-color: darken($black,5%);
+  .ft-left {
+    p {
+      margin: 0;
+      font-size: 14px;
+      color: $light;
+      a {
+        font-size: 16px;
+        font-weight: 600;
+        color: $theme-color;
+        text-decoration: none;
+      }
+    }
+  }
+}
+//?=== footer area css ends  ===?

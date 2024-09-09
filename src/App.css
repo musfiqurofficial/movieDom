@@ -1,0 +1,5 @@
+.thumb .swiper-slide-active{
+  background: rgb(255, 230, 0) !important;
+  color: black !important;
+}
+@import "~fluid-player/src/css/fluidplayer.css";

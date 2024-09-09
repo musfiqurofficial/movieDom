@@ -1,0 +1,77 @@
+.manage-profile {
+  @extend .center, .min-h-screen-full;
+  .manage-profile-image-overlay-btn {
+    @extend .position-absolute,
+      .top-0,
+      .left-0,
+      .w-100,
+      .h-100,
+      .mdom-bg-dark-40,
+      .d-inline-flex,
+      .justify-content-center,
+      .align-items-center;
+    svg {
+      width: 30% !important;
+      height: 30% !important;
+      * {
+        stroke: $light;
+      }
+    }
+  }
+  .manage-profile-edit-profile-popup {
+    @extend .position-absolute,
+      .top-0,
+      .left-0,
+      .min-h-screen-full,
+      .w-100,
+      .mdom-bg-dark,
+      .d-flex,
+      .justify-content-center,
+      .align-items-flex-start;
+      transition: all 0.2s ease;
+    form {
+      input.user-name-input {
+        @extend .w-100,
+          .p-10,
+          .mdom-bg-light-20,
+          .letter-spacing-1,
+          .fw-600,
+          .mdom-color-light,
+          .mb-15;
+        &:focus {
+          @extend .mdom-bg-light-30;
+        }
+      }
+      select {
+        @extend .py-8,.px-16;
+        background: darken($black, 10%);
+        color: $light;
+        border: 2px solid $light;
+      }
+      input[type='checkbox']{
+        display: none;
+        + .check-box{
+          background-color: rgba($light,0.2);
+          svg,i{
+            display: none;
+          }
+        }
+        &:checked{
+          + .check-box{
+            svg,i{
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.profile-img{
+  height: 100%;
+  width: 100%;
+  max-width: 230px;
+  max-height : 230px;
+  object-fit: cover;
+}

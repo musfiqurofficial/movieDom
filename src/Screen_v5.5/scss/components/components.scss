@@ -1,0 +1,40 @@
+// // [----> COMMON : SCSS <----]
+@import "./common/common.scss";
+
+// // [----> LAYOUT : SCSS <----]
+@import "./layout/layout.scss";
+@import "./layout/header.scss";
+
+// // [----> BUTTONS : SCSS <----]
+@import "./buttons/buttons.scss";
+@import "./buttons/icon-button.scss";
+
+// // [----> CARD : SCSS <----]
+@import "./cards/card.scss";
+
+// [----> SLIDER : SCSS <----]
+@import "./slider/slider-default.scss";
+@import "./slider/slider.expend.scss";
+@import "./slider/slider.cover.scss";
+@import "./slider/slider.overlay.scss";
+
+// [-----> Filter Section <-----]
+@import "./Filter/filter.scss";
+
+
+// // [----> BANNER : SCSS <----]
+@import "./banner/banner.scss";
+
+
+// [-----> USER <-----]
+@import './user/manage-profile.scss';
+
+// [-----> FORM <-----]
+@import './form/form.scss';
+
+// [-----> FORM <-----]
+@import './membership-step/membership-step.scss';
+
+//Preference Component
+@import './PreferenceComponents/userProfiles.scss';
+@import './PreferenceComponents/userPreferenceSelection.scss';

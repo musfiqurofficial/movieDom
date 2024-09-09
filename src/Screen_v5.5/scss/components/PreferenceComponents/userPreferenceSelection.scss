@@ -1,0 +1,43 @@
+.user-preference-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 60px;
+  .title {
+    @extend .letter-spacing-1, .mdom-color-light,.fw-700;
+    font-size: 38px;
+  }
+  .sub-title {
+    @extend .fs-14, .letter-spacing-1, .mdom-color-text;
+    text-align: center;
+  }
+  .highlight {
+    color: $secondary !important;
+  }
+  .preferece-item-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 650px;
+    margin-top: 30px;
+    .preferece-item {
+      padding: 8px 15px;
+      border-radius: 8px;
+      color: $light;
+      background: rgba($light, 0.1);
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: all 0.4s ease;
+      &:hover {
+        background: rgba($light, 0.3);
+      }
+      &.selected {
+        background: $primary;
+      }
+    }
+  }
+}

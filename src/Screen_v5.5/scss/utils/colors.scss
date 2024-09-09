@@ -1,0 +1,87 @@
+@each $name, $value in $theme {
+  .mdom-color-#{$name} {
+    color: $value ;
+  }
+
+  .mdom-bg-#{$name} {
+    background: $value ;
+  }
+
+  .mdom-color-md-#{$name} {
+    @include breakpoint(md) {
+      color: $value ;
+    }
+  }
+
+  .mdom-bg-md-#{$name} {
+    @include breakpoint(md) {
+      background: $value ;
+    }
+  }
+
+  .mdom-color-lg-#{$name} {
+    @include breakpoint(lg) {
+      color: $value ;
+    }
+  }
+
+  .mdom-bg-lg-#{$name} {
+    @include breakpoint(lg) {
+      background: $value ;
+    }
+  }
+
+  $colors_opacity: 0;
+  @while $colors_opacity<=100 {
+    .mdom-bg-#{$name}-#{$colors_opacity} {
+      background: rgba($value, $colors_opacity/100) ;
+    }
+    .mdom-bg-md-#{$name}-#{$colors_opacity} {
+      @include breakpoint(md) {
+        background: rgba($value, $colors_opacity/100) ;
+      }
+    }
+    .mdom-bg-lg-#{$name}-#{$colors_opacity} {
+      @include breakpoint(lg) {
+        background: rgba($value, $colors_opacity/100) ;
+      }
+    }
+    $colors_opacity: $colors_opacity + 5;
+  }
+}
+
+$option: (initial, inherit, transparent, none);
+
+@each $item in $option {
+  .mdom-color-#{$item} {
+    color: $item ;
+  }
+
+  .mdom-color-md-#{$item} {
+    @include breakpoint(md) {
+      color: $item ;
+    }
+  }
+
+  .mdom-color-lg-#{$item} {
+    @include breakpoint(lg) {
+      color: $item ;
+    }
+  }
+
+  .mdom-bg-#{$item} {
+    background: $item ;
+  }
+
+  .mdom-bg-md-#{$item} {
+    @include breakpoint(md) {
+      background: $item ;
+    }
+  }
+
+  .mdom-bg-lg-#{$item} {
+    @include breakpoint(lg) {
+      background: $item ;
+    }
+  }
+}

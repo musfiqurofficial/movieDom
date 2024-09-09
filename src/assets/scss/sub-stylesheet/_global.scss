@@ -1,0 +1,781 @@
+/*!
+<----------------------------------------
+  Theme Name: moviedom.
+  Theme URI: https://www.itdom.de/.
+  Author: itdom.
+  Author URI: https://www.itdom.de/.
+  Description: moviedom is a Creative HTML5 Template for Saas, Startup & any ytpe of confarence.
+  Version: 1.0.0
+  Tags: app, moviedom E-media, app landing page, app showcase template, application services, gradient color, landing, marketing, responsive template, seo, software, Software Services, startup, tech, web application landing page.
+---------------------------------------->
+*/
+/*
+>>> TABLE OF CONTENTS:
+<----------------------------------------------------------------
+  01. Default CSS
+  02. Global css
+  03. Header
+  04. sidebar menu
+  05. pricing
+  06. social media
+  07. footer
+---------------------------------------------------------------->
+
+
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  color: $light;
+  background: $black;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden !important;
+  min-height: 95vh !important;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  color: $desc-color;
+  font-size: 1rem;
+  font-weight: 400;
+  outline: none;
+  border: none;
+
+  input::-webkit-inner-spin-button,
+  input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+h1 {
+  font-size: $fs-h2;
+}
+
+h2 {
+  font-size: $fs-h2;
+}
+
+h3 {
+  font-size: $fs-h3;
+}
+
+h4 {
+  font-size: $fs-h4;
+}
+
+h5 {
+  font-size: $fs-h5;
+}
+
+h6 {
+  font-size: $fs-h6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $title-color;
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+
+h1>a,
+h2>a,
+h3>a,
+h4>a,
+h5>a,
+h6>a {
+  color: inherit;
+  font-size: inherit;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 576px) {
+  h1 {
+    font-size: $fs-h1;
+  }
+
+  h2 {
+    font-size: $fs-h2;
+  }
+
+  h3 {
+    font-size: $fs-h3;
+  }
+
+  h4 {
+    font-size: $fs-h4;
+  }
+
+  h5 {
+    font-size: $fs-h5;
+  }
+
+  h6 {
+    font-size: $fs-h6;
+  }
+}
+
+p {
+  font-size: $fs-small-x;
+  margin: 0 0 15px;
+  color: $title-color;
+  line-height: 1.5;
+}
+
+span {
+  font-size: $fs-small-x;
+}
+
+a {
+  color: $desc-color;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+  @include transition($transition);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+a:focus {
+  outline: none;
+}
+
+a:hover,
+a:active {
+  color: $black-color;
+  outline: 0;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+  @include transition($transition);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/*======= all custom btn css =======*/
+button.btn {
+  display: inline-flex;
+}
+
+// .btn {
+//   font-size: 14px;
+//   padding: 8px 30px;
+//   border: none;
+//   cursor: pointer;
+//   outline: none;
+//   display: inline-flex;
+//   align-items: center;
+//   overflow: hidden;
+//   border-radius: 3px;
+//   position: relative;
+//   background: rgba($theme-color, 0.5);
+//   border: 1px solid $theme-color;
+//   transition: all 0.3s ease-in-out;
+//   color: $light;
+//   backdrop-filter: blur(5px);
+
+//   &:focus {
+//     box-shadow: none;
+//   }
+
+//   &:hover {
+//     background: rgba($theme-color, 0.9);
+//     border-color: $light;
+//     color: white;
+
+//     span,
+//     i,
+//     svg {
+//       color: rgb(255, 255, 255);
+//     }
+//   }
+
+//   i,
+//   span,
+//   svg {
+//     margin: 0 $space-sm;
+//   }
+
+//   i {
+//     color: $light;
+//   }
+
+//   span {
+//     font-size: 13px;
+//     color: $light;
+//   }
+
+//   .btn-ripple {
+//     background: rgba($theme-color, 0.5);
+//     position: absolute;
+//     border-radius: 100%;
+//     animation: ripple 1s;
+//     transform: scale(0);
+//   }
+// }
+
+// .btn-outline {
+//   background: transparent;
+//   border: 1px solid $black-color;
+
+//   span {
+//     color: $light;
+//   }
+// }
+
+.watch-btn {
+  display: flex;
+  align-items: center;
+  padding: 8px 26px;
+  border-radius: 25px;
+  margin-right: 16px;
+  position: relative;
+  border: 1px solid $theme-color;
+  background: transparent;
+  box-shadow: 2px 1px 8px 1px rgba(232, 58, 153, 0.5);
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: auto;
+    right: 0;
+    border-radius: 25px;
+    background: $primary;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    color: $theme-color;
+    border-color: $light;
+
+    &::after {
+      width: 100%;
+      left: 0;
+      right: auto;
+    }
+
+    span,
+    i {
+      z-index: 1;
+      position: relative;
+      color: $light-lt;
+    }
+  }
+}
+
+/*======= all custom btn css =======*/
+
+//?======= all keyframes css start =====?//
+@keyframes ripple {
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+//?======= all keyframes css ends  =====?//
+
+//? === section header css start ===?//
+.section-header-style {
+  @extend %flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h4 {
+    margin: 0;
+    color: $light-lt;
+    line-height: 20px;
+  }
+
+  a {
+    font-size: 14px;
+    color: $light-lt;
+    text-decoration: none;
+  }
+}
+
+//? === section header css ends  ===?//
+
+//?=== swiper button css ===?//
+.swiper-button-next,
+.swiper-button-prev {
+
+  &.button-next,
+  &.button-prev {
+    width: 40px;
+
+    &::after {
+      font-size: 16px;
+      line-height: 40px;
+      height: 40px;
+      width: 40px;
+      color: $light;
+      text-align: center;
+      background: darken($theme-color, 40%);
+    }
+
+    &.swiper-button-next {
+      right: 0;
+
+      &::after {
+        border-radius: 100% 0 0 100%;
+      }
+    }
+
+    &.swiper-button-prev {
+      left: 0;
+
+      &::after {
+        border-radius: 0 100% 100% 0;
+      }
+    }
+  }
+
+  &.style-next,
+  &.style-prev {
+    &::after {
+      font-size: 16px;
+      line-height: 40px;
+      height: 40px;
+      width: 40px;
+      color: $light;
+      text-align: center;
+      background: darken($theme-color, 50%);
+    }
+
+    &.swiper-button-next {
+      left: 0;
+
+      &::after {
+        border-radius: 0 100% 100% 0;
+      }
+    }
+
+    &.swiper-button-prev {
+      right: 0;
+
+      &::after {
+        border-radius: 100% 0 0 100%;
+      }
+    }
+  }
+}
+
+//?=== swiper button css ===?//
+
+//#==== form css start ====#//
+form {
+  .input-group {
+    position: relative;
+
+    input {
+      border-radius: 3px !important;
+
+      &.form-control {
+        width: 100%;
+        height: 40px;
+        font-size: 14px;
+        margin-left: 0;
+        border: 1px solid rgba($light, 0.8);
+        background: transparent;
+        transition: all 0.3s ease-in-out;
+
+        &::placeholder {
+          font-size: 12px;
+          color: 1px solid rgba($light, 0.8);
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:focus {
+          border: 1px solid $black-color;
+          box-shadow: none;
+
+          &::placeholder {
+            color: $black-color;
+            padding-left: 5px;
+          }
+
+          ~i {
+            color: $black-color;
+
+            svg {
+              g {
+                path {
+                  fill: $black-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      color: $theme-color;
+      z-index: 9;
+      transform: translateY(-50%);
+
+      &.view_pass {
+        left: auto;
+        right: 10px;
+        cursor: pointer;
+      }
+    }
+
+    label {
+      position: absolute;
+      font-size: 12px;
+      top: 50%;
+      left: 10px;
+      opacity: 0;
+      padding: 0 5px;
+      background: $light;
+      z-index: 9;
+      transform: translateY(-50%);
+      transition: all 0.3s ease-in-out;
+    }
+
+    textarea {
+      padding: 10px;
+      width: 100%;
+      font-size: 12px;
+      height: 100px !important;
+      border: 1px solid $light;
+      border-radius: 3px !important;
+      background: transparent;
+      transition: all 0.3s ease-in-out;
+
+      &::placeholder {
+        color: $black-color;
+        font-size: 14px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:focus {
+        box-shadow: none;
+        border-color: $black-color;
+
+        &::placeholder {
+          color: $black-color;
+          padding-left: 5px;
+        }
+      }
+    }
+
+    &.textarea-style {
+      label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .input-sellect {
+    label {
+      display: block;
+    }
+
+    select {
+      height: 40px;
+      padding: 10px;
+      width: 100%;
+      border-radius: 3px;
+      border: 1px solid $theme-color;
+    }
+  }
+}
+
+.input-group>input:not(:placeholder-shown)~label {
+  top: -12px;
+  left: 10px;
+  opacity: 1;
+}
+
+//#==== form css end ====#//
+
+/*======= all scrollbar css =====*/
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $theme-color;
+  border-radius: 5px;
+}
+
+//? component //?
+
+%flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+%absolute {
+  position: absolute;
+  content: "";
+}
+
+%shadow {
+  box-shadow: 0 5px 10px 0 rgba($black-color, 0.12);
+}
+
+%border {
+  border: 10px solid $theme-color;
+}
+
+%widget-mt {
+  margin-top: 35px;
+}
+
+%widget-pad {
+  padding: 20px 20px 30px;
+}
+
+//? component //?
+
+//? all social media ends
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes preloader-fx {
+  0% {
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes preloader-fx {
+  0% {
+    -webkit-transform: scale(0, 0);
+    opacity: 0.5;
+  }
+
+  100% {
+    -webkit-transform: scale(1, 1);
+    opacity: 0;
+  }
+}
+
+@keyframes collection {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
+
+/**
+----------sections-----------
+*/
+
+section {
+  &:not(.banner-area) {
+    padding: 1rem 0;
+
+    @include breakpoint(md) {
+      padding: 2rem 0;
+    }
+  }
+}
+
+// theme container
+.theme-container {
+  width: 100%;
+  padding: 0 10px;
+
+  @include breakpoint(md) {
+    padding: 0 40px;
+  }
+
+  @include breakpoint(lg) {
+    padding: 0 60px;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bar-title {
+  color: $primary;
+  position: relative;
+  padding: $space 0;
+  margin-bottom: 1.5rem;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    content: "";
+    background: linear-gradient(to right,
+        transparent,
+        $primary-lt,
+        transparent);
+  }
+}
+
+.text-theme {
+  color: $theme-color;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-1 {
+  opacity: 1;
+}
+
+.text-in-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.text-in-3 {
+  @extend .text-in-2;
+  -webkit-line-clamp: 3;
+
+}
+
+.text-in-1 {
+  @extend .text-in-2;
+  --webkit-line-clamp: 1;
+  word-break: break-all;
+}
+
+.dotted-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 90%;
+}
+
+.see-more {
+  color: $light;
+  cursor: pointer;
+}
+
+.min-80vh {
+  min-height: 95vh;
+}
+
+.title-or-logo {
+  filter: drop-shadow(4px 4px 10px black);
+}
+
+.ratio-poster {
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.ratio-backdrop {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.hideable {
+  transition: all 0.3s linear;
+  transition-delay: 0.2s;
+  transform-origin: bottom left;
+
+  &.hide {
+    overflow: hidden;
+    height: 0;
+    width: 0;
+  }
+}
+
+.bg-none {
+  background: none !important;
+}
+
+
+.text-light {
+  color: $light !important;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-white-lt {
+  color: rgb(215, 215, 215);
+}

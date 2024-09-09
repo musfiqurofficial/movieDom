@@ -1,0 +1,24 @@
+$ratio: (
+  poster: 2/3,
+  backdrop: 16/9,
+  squire: 1,
+);
+
+@each $name, $value in $ratio {
+  .ratio-#{$name} {
+    aspect-ratio: $value;
+    object-fit: cover;
+  }
+  .ratio-md-#{$name} {
+    @include breakpoint(md) {
+      aspect-ratio: $value;
+      object-fit: cover;
+    }
+  }
+  .ratio-lg-#{$name} {
+    @include breakpoint(lg) {
+      aspect-ratio: $value;
+      object-fit: cover;
+    }
+  }
+}

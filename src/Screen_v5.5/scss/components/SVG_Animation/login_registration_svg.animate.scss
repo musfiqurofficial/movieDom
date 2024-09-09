@@ -1,0 +1,138 @@
+#login_registration_svg {
+  #white_girl_pilo {
+    transform-box: fill-box;
+    animation: girl_pelo_anim 2.5s linear infinite;
+  }
+  #lamp_switch {
+    transform-box: fill-box;
+    animation: lapm_switch 2s ease infinite;
+  }
+  #minute {
+    transform-box: fill-box;
+    animation: minute_ 2s linear infinite;
+  }
+  #hour {
+    transform-box: fill-box;
+    transform-origin: right center;
+    animation: minute_ 8s linear infinite;
+  }
+  #man_popcorn {
+    animation: popcorn 1.3s ease infinite;
+    &.one {
+      animation: popcorn 1.5s ease infinite;
+    }
+    &.two {
+      animation: popcorn 2.3s ease infinite;
+    }
+    &.three {
+      animation: popcorn 1.8s ease infinite;
+    }
+  }
+  #boy_hand {
+    animation: boy_hand 1.5s ease infinite;
+  }
+  #girl_dark_hand {
+    animation: girl_dark_hand 1.5s ease infinite;
+  }
+  // #man_left_shoe {
+  //   // animation: left_shoe 1.5s ease infinite;
+  // }
+  #man_right_shoe {
+    transform-box: fill-box;
+    animation: right_shoe 2.5s ease infinite;
+  }
+}
+
+// -------------------------------------->
+// ANIMATIONS---------------------------->
+// -------------------------------------->
+@keyframes girl_pelo_anim {
+  0% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes lapm_switch {
+  0% {
+    transform: rotate(6deg);
+  }
+  50% {
+    transform: rotate(-6deg);
+  }
+  100% {
+    transform: rotate(6deg);
+  }
+}
+@keyframes minute_ {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes popcorn {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes girl_dark_hand {
+  0% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes boy_hand {
+  0% {
+    transform: translateY(-6px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+  100% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes left_shoe {
+  0% {
+    transform: rotateZ(-0.2deg);
+  }
+  50% {
+    transform: rotateZ(0.2deg);
+  }
+  100% {
+    transform: rotateZ(-0.2deg);
+  }
+}
+@keyframes right_shoe {
+  0% {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+  50% {
+    transform: rotate(25deg) translate(-5px, -25px);
+  }
+  100% {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+}

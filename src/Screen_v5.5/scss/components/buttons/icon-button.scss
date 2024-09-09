@@ -1,0 +1,87 @@
+.icon-btn {
+  --size: 50px;
+  --icon-size: 16px;
+  height: var(--size);
+  width: var(--size);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1000px;
+  background: rgba($light, 0.1);
+
+  i {
+    font-size: var(--icon-size);
+  }
+
+  svg {
+    height: var(--size) / 60 !important;
+    width: var(--size) / 60 !important;
+
+    * {
+      fill: $light;
+    }
+  }
+
+
+  &:hover {
+    background: rgba($light, 0.15);
+  }
+
+
+  &.primary {
+    background: $primary;
+    &:hover {
+      background: darken($primary, 10%);
+    }
+  }
+
+  &.secondary {
+    background: $secondary;
+    &:hover {
+      background: darken($secondary, 10%);
+    }
+  }
+
+  &.highlight {
+    background: $highlight;
+
+    i {
+      color: $dark !important;
+    }
+
+    svg {
+      * {
+        fill: $dark;
+      }
+    }
+    &:hover {
+      background: darken($highlight, 10%);
+    }
+  }
+
+  &.dark {
+    background: $dark;
+    &:hover {
+      background: darken($dark, 10%);
+    }
+  }
+
+  &.light {
+    background: $light;
+
+    i {
+      color: $dark !important;
+    }
+
+    svg {
+      * {
+        fill: $dark;
+      }
+    }
+
+    &:hover {
+      background: darken($light, 10%);
+    }
+
+  }
+}

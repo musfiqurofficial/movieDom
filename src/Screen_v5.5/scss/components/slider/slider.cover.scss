@@ -1,0 +1,191 @@
+$height: 180px;
+$width: 320.5px;
+$transition-delay: 0.3s;
+$transition-duration: 0.4s;
+
+
+.swiper-mdom-slider-type-cover {
+  overflow: visible !important;
+  z-index: 1 !important;
+
+  &:hover {
+    z-index: 2 !important;
+  }
+
+  .swiper-wrapper {
+    overflow: visible;
+  }
+
+  .swiper-slide {
+    .overlap {
+      background: linear-gradient(to top, #000000 2%, transparent 20%);
+    }
+
+    .show-on-hover {
+      opacity: 0;
+      visibility: hidden;
+      transition: 0s;
+    }
+
+    &:hover {
+      .show-on-hover {
+        opacity: 1;
+        visibility: visible;
+        transition: 0.2s;
+      }
+    }
+
+    .mdom-card-trailer {
+      @extend .position-absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    // transition: width ease-out $transition-duration;
+    overflow: visible !important;
+    border-radius: 5px;
+    z-index: 100;
+    // width: $width !important;
+    // height: $height !important;
+    transition: all 0.1s ease;
+    transition-delay: 0s;
+
+    .mdom-card-cover {
+      &:hover {
+        box-shadow: 0 10px 25px 0 #00000080;
+        transform:translateY(-50%) !important;
+      }
+
+      .hide-on-hover {
+        opacity: 1;
+        visibility: visible;
+        transition: 0.2s;
+      }
+    }
+
+    .mdom-card-hover-content {
+      height: 0px !important;
+      overflow: hidden !important;
+      padding: 0 !important;
+      opacity: 0;
+      visibility: hidden;
+      background: darken($dark, 20%);
+
+      .action-btns {
+        @extend .d-flex,
+        .justify-content-flex-start,
+        .align-items-center,
+        .gap-10,
+        .gap-md-15,
+        .mb-10;
+        flex-direction: row;
+
+        .action-btn {
+          --size: 40px;
+          @extend .center;
+          height: var(--size);
+          width: var(--size);
+          border-radius: 1000px;
+          background: linear-gradient(to top, darken($dark, 5), lighten($dark, 5));
+
+          &:hover {
+            background: linear-gradient(to top, darken($highlight, 30), lighten($highlight, 15));
+          }
+
+          &:active {
+            background: linear-gradient(to top, darken($highlight, 40), lighten($highlight, 25));
+          }
+        }
+      }
+
+      .title {
+        @extend .fw-600, .letter-spacing-1;
+      }
+
+      .desc {
+        @extend .fs-12, .letter-spacing-1;
+        line-height: 1.6;
+      }
+    }
+
+    .mdom-card-cover {
+      bottom: auto;
+
+
+      &:hover {
+        position: absolute;
+        z-index: 110;
+        transform: translateY(-20%);
+      }
+
+      .desc {
+        font-size: 14px;
+        color: $text;
+        @extend .text-in-two;
+      }
+
+      &.card {
+        overflow: hidden;
+
+        .card-body {
+          opacity: 0;
+          height: 0;
+          visibility: hidden;
+          padding: 0 !important;
+          transition: opacity 0.2s ease;
+        }
+
+        &:hover {
+          .card-body {
+            height: fit-content;
+            opacity: 1;
+            visibility: visible;
+            padding: 10px !important;
+          }
+        }
+      }
+    }
+
+    &.last-slide {
+      &:hover {
+        .mdom-card-cover {
+          bottom: 0 !important;
+        }
+      }
+    }
+
+    &:hover {
+      z-index: 120;
+      transform: scale(1.1);
+
+      .mdom-card-cover {
+        .hide-on-hover {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      // transition: all $transition-duration ease;
+      // transition-delay: $transition-delay;
+      .mdom-card-hover-content {
+        // transition: all $transition-duration ease;
+        // transition-delay: $transition-delay;
+        height: auto !important;
+        overflow: hidden !important;
+        padding: 10px !important;
+        opacity: 1;
+        visibility: visible;
+
+        .title {
+          @extend .text-in-one;
+        }
+
+        .desc {
+          @extend .text-in-two;
+        }
+      }
+    }
+  }
+}
+

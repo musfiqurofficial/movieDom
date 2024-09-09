@@ -1,0 +1,88 @@
+{
+  "show_genre": true,
+  "main_menu": [
+    {
+      "name": "Live TV",
+      "sub_menu": [
+        {
+          "name": "TV 1",
+          "url": "http://1.3.4.5/"
+        },
+        {
+          "name": "TV 1",
+          "url": "http://1.3.4.5/"
+        }
+      ]
+    },
+    {
+      "name": "My List",
+      "route": "/my-list"
+    },
+    {
+      "name": "Request",
+      "route": "/request"
+    }
+  ],
+  "mobile_menu": [
+    {
+      "name": "Home",
+      "route": "/"
+    },
+    {
+      "name": "Movies",
+      "route": "/movies"
+    },
+    {
+    "name": "TV series",
+      "route": "/tv-series"
+    },
+    {
+      "name": "Live",
+      "route": "/live-tv"
+    }
+  ],
+  "side_menu": [
+    {
+      "name": "FTP",
+      "sub_menu": [
+        {
+          "name": "MediaPlex",
+          "ip": "http://59.153.203.202/"
+        },
+        {
+          "name": "MediaPlex",
+          "ip": "http://59.153.203.202/"
+        },
+        {
+          "name": "MediaPlex",
+          "ip": "http://59.153.203.202/"
+        }
+      ]
+    },
+    {
+      "name": "Live TV",
+      "sub_menu": [
+        {
+          "name": "MediaPlex",
+          "ip": "http://59.153.203.202/"
+        },
+        {
+          "name": "MediaPlex",
+          "ip": "http://59.153.203.202/"
+        },
+        {
+          "name": "MediaPlex",
+          "ip": "http://59.153.203.202/"
+        }
+      ]
+    },
+    {
+      "name": "My List",
+      "route": "/my-list"
+    },
+    {
+      "name": "Request",
+      "route": "/request"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+$primary: #e70101;
+$secondary: #d2d517;
+$highlight :#04ff8e ; 
+$dark: #0f1622;
+$light: #fafbff;
+$text: #d8d8d8;
+$facebook:	#3b5998;
+$google:	#dd4b39;
+$linkedin:	#0e76a8;
+
+
+$theme: (
+  primary: $primary,
+  secondary: $secondary,
+  highlight : $highlight ,
+  dark: $dark,
+  light: $light,
+  text: $text,
+);
+
+// ---->TRANSFORM<----
+$transition-style: (linear, ease, ease-in, ease-out, ease-in-out);
+$transition-property: (all,opacity, width, height, transform, visibility);
+
+$cubic-bazz: (
+  primary: cubic-bezier(1, 0.01, 0.49, 0.96),
+);
+
+$transition-time-start: 0; //start second
+$transition-time-end: 2; //end second

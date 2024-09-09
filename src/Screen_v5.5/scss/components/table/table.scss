@@ -1,0 +1,56 @@
+table {
+  width: 100%;
+}
+tbody {
+  display: flex;
+  flex-direction: column;
+}
+tr {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 2px solid rgba($light, 0.5);
+  padding: 15px 0;
+}
+
+.package-name span {
+  display: flex;
+  max-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-radius: 5px;
+  background: linear-gradient(
+    45deg,
+    darken($primary, 5%),
+    lighten($primary, 5%)
+  );
+}
+.package-title {
+  color: $light;
+}
+.package-data {
+  color: $light;
+}
+.package-data {
+  color: $light;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  .data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    .icon {
+      color: $primary;
+    }
+    .text {
+      color: $light;
+    }
+  }
+}

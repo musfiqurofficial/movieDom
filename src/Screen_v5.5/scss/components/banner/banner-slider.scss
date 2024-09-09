@@ -1,0 +1,165 @@
+.banner-logo {
+    @extend .mb-15;
+    max-width: 267px;
+    filter: drop-shadow(2px 4px 2px black);
+}
+
+.mobile-banner-poster {
+    width: 100%;
+    max-width: 240px;
+}
+
+.action-btns {
+    display: flex;
+    gap: 10px;
+
+    .action-btn {
+        --size: 50px;
+        --icon-size: 22px;
+        height: var(--size);
+        width: var(--size);
+        background: linear-gradient(to top, lighten($dark, 5), lighten($dark, 20));
+        transition: background 0.2s ease;
+        border-radius: 1000px;
+        @extend .center;
+
+        .icon {
+            font-size: var(--icon-size);
+            color: $light;
+        }
+
+        &:hover {
+            background: linear-gradient(to top, lighten($primary, 0), lighten($primary, 10));
+        }
+
+        &.active {
+            background: linear-gradient(to top, lighten($primary, 10), lighten($primary, 30));
+        }
+    }
+}
+
+.mdom-banner-area {
+    position: relative;
+    height: 90vh;
+    min-height: 680px;
+
+    .mdom-banner-slider {
+        height: 100%;
+    }
+
+    .home-slider-one {
+        .home-slide {
+            background: $dark;
+            z-index: 0;
+
+            &.swiper-slide-active {
+                z-index: 1;
+            }
+
+        }
+    }
+}
+
+
+
+.bottom-section-shadow {
+    position: relative;
+
+    &::after {
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to top, darken($dark,15%) 5%, transparent 30%);
+    }
+}
+
+
+.mdom-banner {
+    @extend .position-relative, .d-flex, .justify-content-flex-end, .flex-column, .bottom-section-shadow;
+    height: 100%;
+
+    .container {
+        z-index: 1;
+    }
+
+    .btns {
+        @extend .d-flex, .flex-row, .gap-10;
+    }
+
+    .tags {
+        @extend .d-flex, .gap-10, .justify-content-flex-start;
+
+        .tag {
+            @extend .py-4, .px-10, .mdom-bg-light-20, .rounded-4;
+            border:1px solid transparent;
+            &:hover{
+                @extend .mdom-bg-light-40;
+                border:1px solid #ffffff70;
+            }
+        }
+    }
+
+    .media {
+        .backdrop {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+    }
+}
+
+.trailer-controller {
+    @extend .d-flex, .gap-10, .align-items-center, .flex-wrap, .w-100;
+
+    .progress-bar {
+        width: auto;
+        flex-grow: 1;
+    }
+
+    .btns {
+        @extend .d-flex, .gap-10, .d-flex, .justify-content-center, .align-items-center;
+    }
+}
+
+
+.progress-bar {
+    --progress: 0px;
+    --loaded: 0px;
+    position: relative;
+    height: 5px;
+    width: 100%;
+    border-radius: 1000px;
+    overflow: hidden;
+    background: rgba($light, 0.1);
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: var(--progress);
+        background: $primary;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: var(--loaded);
+        background: rgba($light, 0.15);
+    }
+}
+
+.desc{
+    color: $text;
+}

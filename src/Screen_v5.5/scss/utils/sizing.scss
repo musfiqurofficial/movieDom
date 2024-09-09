@@ -1,0 +1,82 @@
+$size: 0;
+
+@while $size<=100 {
+  .w-#{$size} {
+    width: #{$size}#{"%"} !important;
+  }
+
+  .w-md-#{$size} {
+    @include breakpoint(md) {
+      width: #{$size}#{"%"} !important;
+    }
+  }
+
+  .w-lg-#{$size} {
+    @include breakpoint(lg) {
+      width: #{$size}#{"%"} !important;
+    }
+  }
+
+  .h-#{$size} {
+    height: #{$size}#{"%"} !important;
+  }
+
+  .h-md-#{$size} {
+    @include breakpoint(md) {
+      height: #{$size}#{"%"};
+    }
+  }
+
+  .h-lg-#{$size} {
+    @include breakpoint(lg) {
+      height: #{$size}#{"%"};
+    }
+  }
+
+  $size: $size + 1;
+}
+
+$size: 0;
+
+@while $size<=100 {
+  .w-#{$size}-px {
+    width: #{$size}px;
+  }
+
+  .w-md-#{$size}-px {
+    @include breakpoint(md) {
+      width: #{$size}px;
+    }
+  }
+
+  .w-lg-#{$size}-px {
+    @include breakpoint(lg) {
+      width: #{$size}px;
+    }
+  }
+
+  .h-#{$size}-px {
+    height: #{$size}px;
+  }
+
+  .h-md-#{$size}-px {
+    @include breakpoint(md) {
+      height: #{$size}px;
+    }
+  }
+
+  .h-lg-#{$size}-px {
+    @include breakpoint(lg) {
+      height: #{$size}px;
+    }
+  }
+
+  $size: $size + 1;
+}
+
+.h-screen-full{
+  height:100vh;
+}
+.min-h-screen-full{
+  min-height:100vh;
+}

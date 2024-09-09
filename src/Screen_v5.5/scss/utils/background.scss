@@ -1,0 +1,41 @@
+$gradient: (
+  light: $light,
+  dark: $dark,
+);
+$posi: (top, left, right, bottom);
+@each $name, $value in $gradient {
+  @each $p in $posi {
+    .mdom-bg-linear-to-#{$p}-#{$name} {
+      background: linear-gradient(to $p, rgba($value, 0.2), transparent);
+    }
+    .mdom-bg-linear-md-to-#{$p}-#{$name} {
+      @include breakpoint(md) {
+        background: linear-gradient(to $p, rgba($value, 0.2), transparent);
+      }
+    }
+    .mdom-bg-linear-lg-to-#{$p}-#{$name} {
+      @include breakpoint(lg) {
+        background: linear-gradient(to $p, rgba($value, 0.2), transparent);
+      }
+    }
+  }
+}
+
+// ====> BACKGROUND SIZE <====
+$bg-size-opt: (cover, contain, auto, unset, revert, initial, inherit);
+
+@each $item in $bg-size-opt {
+  .bg-#{$item} {
+    background-size: $item;
+  }
+  .bg-md-#{$item} {
+    @include breakpoint(md) {
+      background-size: $item;
+    }
+  }
+  .bg-lg-#{$item} {
+    @include breakpoint(lg) {
+      background-size: $item;
+    }
+  }
+}

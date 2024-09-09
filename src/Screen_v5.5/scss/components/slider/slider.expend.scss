@@ -1,0 +1,242 @@
+$height: 180px;
+$width: 122px;
+$hover-width: 320.5px;
+
+
+// $height: 220px;
+// $width: 146.667px;
+// $hover-width: 391.11px;
+$transition-delay: 0.3s;
+$transition-duration: 0.4s;
+
+.slider-section {
+
+  // .mdom-slider {
+  //   .swiper-wrapper {
+  //     // padding-left: 10px;
+  //     // padding-right: 10px;
+  //     // @include breakpoint(md) {
+  //     //   padding-left: 25px;
+  //     //   padding-right: 25px;
+  //     // }
+  //     // @include breakpoint(lg) {
+  //     //   padding-left: 50px;
+  //     //   padding-right: 50px;
+  //     // }
+  //   }
+  // }
+  .slider-header {
+    @extend .mdom-color-light;
+
+    .title {
+      .text {
+        @extend .fs-20, .letter-spacing-1;
+      }
+
+      .icon {
+        svg {
+          @extend .h-30-px, .w-30-px;
+        }
+      }
+
+      .more-btn {
+        @extend .transition-all-primary-30, .mdom-color-highlight;
+        transform: translateX(-30%);
+        opacity: 0;
+
+        svg {
+          @extend .transition-all-ease-60;
+          transform: translateX(-300%);
+
+          * {
+            stroke: $highlight;
+          }
+        }
+
+        &:hover {
+          @extend .mdom-color-highlight;
+          opacity: 0.5 !important;
+          transform: translateX(0) scale(1.2) !important;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .slider-header {
+      .title {
+        .more-btn {
+          @extend .ml-20;
+          transform: translateX(0%);
+          opacity: 1;
+
+          svg {
+            transform: translateX(10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.swiper-mdom-slider-type-expend {
+  z-index: 0 !important;
+
+  .swiper-slide {
+    transition: width ease-out $transition-duration;
+    overflow: hidden !important;
+    border-radius: 5px;
+
+    @include breakpoint(md) {
+      height: $height * (1.2) !important;
+      width: $width * (1.2) !important;
+    }
+
+    @include breakpoint(lg) {
+      height: $height * (1.5) !important;
+      width: $width * (1.5) !important;
+    }
+
+    .show-on-hover {
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.2s 0s;
+    }
+
+    &:hover {
+      .show-on-hover {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: $transition-delay;
+      }
+    }
+
+    .mdom-card-expend {
+      .mdom-card-img-backdrop {
+        @extend .h-100, .w-100, .top-0, .left-0, .position-absolute;
+        object-fit: cover;
+        // opacity: 0 !important;
+      }
+
+      .mdom-card-trailer {
+        @extend .position-absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .mdom-card-img-poster {
+        @extend .h-100, .top-0, .left-50, .position-absolute;
+        opacity: 1;
+        transform: translateX(-50%);
+        transition: all ease-out $transition-duration;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .mdom-card-hover-content {
+        @extend .position-absolute,
+        .h-100,
+        .w-100,
+        .top-0,
+        .left-0,
+        .d-flex,
+        .flex-direction-column,
+        .justify-content-space-between,
+        .mdom-bg-linear-to-top-dark;
+        opacity: 0;
+        visibility: hidden;
+        transition: width ease-out $transition-duration;
+
+        .action-btns {
+          @extend .d-flex, .gap-6, .flex-direction-column;
+          align-self: end;
+
+          .action-btn {
+            @extend .center, .rounded-full;
+            cursor: pointer;
+            opacity: 1;
+            transition: 0.4s ease;
+            background: linear-gradient(to top, darken($dark, 15), lighten($dark, 10));
+
+            &:hover {
+              background: linear-gradient(to bottom, darken($dark, 15), lighten($dark, 10));
+            }
+
+            @include breakpoint(md) {
+              width: 30px !important;
+              height: 30px !important;
+
+              svg {
+                width: 20px !important;
+                height: 20px !important;
+              }
+            }
+
+            @include breakpoint(lg) {
+              width: 45px !important;
+              height: 45px !important;
+
+              svg {
+                width: 25px !important;
+                height: 25px !important;
+              }
+            }
+          }
+        }
+
+        .mdom-card-hover-content-body {
+          @extend .p-5, .pb-10;
+          background: linear-gradient(to top,
+              rgba($dark, 0.6) 50%,
+              transparent 100%);
+          transition-delay: $transition-delay;
+
+          .title {
+            @extend .mdom-color-light, .fs-18, .fw-600, .mb-0;
+          }
+
+          .desc {
+            @extend .mdom-color-text, .fs-14, .fw-400;
+            color: $text;
+          }
+
+          a {
+            color: $secondary;
+          }
+        }
+      }
+    }
+
+    // SWIPER SLIDE HOVER -->
+    &:hover {
+      transition-delay: $transition-delay;
+
+      @include breakpoint(md) {
+        width: $hover-width*(1.2) !important;
+      }
+
+      @include breakpoint(lg) {
+        width: $hover-width * (1.5) !important;
+      }
+
+      .mdom-card-expend {
+        .mdom-card-img-poster {
+          opacity: 0;
+          transition-delay: $transition-delay;
+          width: auto;
+        }
+
+        .mdom-card-img-backdrop {
+          opacity: 1 !important;
+          transition-delay: $transition-delay;
+        }
+
+        .mdom-card-hover-content {
+          opacity: 2;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.fixedPlayButton {
+    @extend .position-fixed, .bottom-5, .left-50, .py-md-15, .py-lg-20, .px-md-30, .px-lg-50, .rounded-full, .d-flex, .gap-20, .align-items-center;
+    z-index: 1000;
+    transform: translateX(-50%);
+    box-shadow: 0 10px 20px 4px rgba(darken($dark, 20%), 0.4);
+    transition: all 0.2s ease;
+    background: linear-gradient(to top,darken($primary,10),lighten($primary,10));
+    &:hover {
+        background: linear-gradient(to top,darken($primary,15),lighten($primary,10));
+    }
+
+    .text {
+        @extend .fw-600, .fs-14, .fs-md-16, .fs-lg-18, .letter-spacing-1;
+    }
+
+    .icon {
+        color: inherit;
+    }
+}

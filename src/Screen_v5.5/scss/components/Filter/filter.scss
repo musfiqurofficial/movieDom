@@ -1,0 +1,29 @@
+.filters-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    background: #ffffff05;
+
+    @include breakpoint(sm) {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+.selected-filters-wrapper {
+    @extend .d-flex, .justify-content-flex-start, .align-items-center, .gap-20;
+    flex-wrap: wrap;
+}
+
+.filter {
+    background: #ffffff10;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-align: center;
+
+    &.select-filter {
+        @extend .py-15;
+        background: darken($dark, 5%);
+    }
+}

@@ -1,0 +1,29 @@
+input,
+textarea {
+  border: none;
+  outline: none;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0 !important;
+  padding: 0;
+  li {
+    padding: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $secondary;
+  &:hover{
+    color: rgba($secondary,0.8);
+  }
+
+}
+
+
+img{
+  width: 100%;
+}

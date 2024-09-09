@@ -1,0 +1,15 @@
+@while $transition-time-start<=$transition-time-end {
+  @each $property in $transition-property {
+    @each $style in $transition-style {
+      .transition-#{$property}-#{$style}-#{$transition-time-start*100} {
+        transition: $property #{$transition-time-start}s $style;
+      }
+    }
+    @each $name, $style in $cubic-bazz {
+      .transition-#{$property}-#{$name}-#{$transition-time-start*100} {
+        transition: $property #{$transition-time-start}s $style;
+      }
+    }
+  }
+  $transition-time-start: $transition-time-start + 0.1;
+}

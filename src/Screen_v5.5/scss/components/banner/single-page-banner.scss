@@ -1,0 +1,91 @@
+.single-page-banner {
+    @extend .position-relative, .overflow-hidden;
+    min-height: $min-height;
+    z-index: 1;
+
+    .media {
+        .overlay {
+            @extend .position-absolute, .h-100, .w-100, .top-0, .left-0;
+            background: linear-gradient(to top, $dark 10%, transparent 20%);
+            z-index: 1;
+        }
+
+        .backdrop {
+            @extend .position-absolute,
+            .top-0,
+            .left-0,
+            .w-100,
+            .h-100,
+            .object-cover;
+        }
+    }
+
+    .content {
+        @extend .position-relative, .d-flex, .align-items-flex-end, .pb-30;
+        z-index: 2;
+        min-height: inherit;
+
+        .content-grid {
+            @extend .d-grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            margin-top: 200px;
+
+            .item-title {
+                @extend .fs-34, .fw-600, .letter-spacing-1;
+            }
+
+            .group {
+                .title {
+                    @extend .fs-20, .fw-600, .letter-spacing-1;
+                }
+
+                .desc {
+                    @extend .fs-14, .letter-spacing-1;
+                    color: darken($text, 10%);
+                    line-height: 1.8;
+                }
+
+                .pagination {
+                    @extend .d-flex, .gap-10, .align-items-center;
+
+                    .devider {
+                        @extend .rounded-full;
+                        height: 3px;
+                        flex-grow: 1;
+                        background: rgba($light, 0.2);
+                    }
+                }
+
+                .swiper {
+                    .swiper-slide {
+                        .actor-img {
+                            @extend .w-100, .ratio-squire, .rounded-full;
+                        }
+                    }
+                }
+            }
+        }
+
+        .details-table {
+            tr {
+                @extend .d-grid, .py-5;
+                grid-template-columns: 1fr 2fr;
+                border: none;
+
+                tr {
+                    td {
+                        .ratting {
+                            i {
+                                background: red !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.desc {
+    color: red !important;
+}

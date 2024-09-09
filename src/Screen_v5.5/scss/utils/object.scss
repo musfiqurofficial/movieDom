@@ -1,0 +1,56 @@
+$values: (
+  contain,
+  cover,
+  fill,
+  none,
+  initial,
+  inherit,
+  revert,
+  scale-down,
+  unset
+);
+
+@each $item in $values {
+  .object-#{$item} {
+    object-fit: $item;
+  }
+
+  .object-md-#{$item} {
+    @include breakpoint(md) {
+      object-fit: $item;
+    }
+  }
+
+  .object-lg-#{$item} {
+    @include breakpoint(lg) {
+      object-fit: $item;
+    }
+  }
+}
+
+$case_y: (top, bottom);
+$case_x: (left, right);
+
+@each $y in $case_y {
+  @each $x in $case_x {
+    .object-#{$y}-#{$x} {
+      object-position: $y $x;
+    }
+  }
+}
+
+.object-center-top {
+  object-position: center top;
+}
+
+.object-center-bottom {
+  object-position: center bottom;
+}
+
+.object-center-left {
+  object-position: center left;
+}
+
+.object-center-right {
+  object-position: center right;
+}

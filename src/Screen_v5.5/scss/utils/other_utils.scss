@@ -1,0 +1,93 @@
+//----> OPACITY <---
+$opacity: 0;
+
+@while $opacity<=100 {
+  .opacity-#{$opacity} {
+    opacity: $opacity/100;
+  }
+
+  .opacity-md-#{$opacity} {
+    @include breakpoint(md) {
+      opacity: $opacity/100;
+    }
+  }
+
+  .opacity-lg-#{$opacity} {
+    @include breakpoint(lg) {
+      opacity: $opacity/100;
+    }
+  }
+
+  $opacity: $opacity + 10;
+}
+
+//----> VISIBILITY <---
+$visibility: (collapse, visible, hidden, revert, unset, inherit, initial);
+
+@each $value in $visibility {
+  .visibility-#{$value} {
+    visibility: $value;
+  }
+  .visibility-md-#{$value} {
+    @include breakpoint(md) {
+      visibility: $value;
+    }
+  }
+  .visibility-lg-#{$value} {
+    @include breakpoint(lg) {
+      visibility: $value;
+    }
+  }
+}
+
+// [----> LETTER SPACING <---]
+
+$space: 0;
+@while $space <=4 {
+  .letter-spacing-#{$space} {
+    letter-spacing: #{$space}px;
+  }
+
+  .letter-spacing-md-#{$space} {
+    @include breakpoint(md) {
+      letter-spacing: #{$space}px;
+    }
+  }
+
+  .letter-spacing-lg-#{$space} {
+    @include breakpoint(lg) {
+      letter-spacing: #{$space}px;
+    }
+  }
+
+  $space: $space + 1;
+}
+
+// backdrop-filter
+.backdrop-blur {
+  backdrop-filter: blur(4px);
+}
+
+// ----< BORDER >< RADIOUS >----
+
+$radious: 0;
+@while $radious<=12 {
+  .rounded-#{$radious} {
+    border-radius: #{$radious}px;
+  }
+  $radious: $radious + 1;
+}
+.rounded-full {
+  border-radius: 1000px;
+}
+
+// Button reset
+
+button{
+  border: none;
+  outline:  none;
+  &:active{
+    border: none;
+    outline: none;
+  }
+}

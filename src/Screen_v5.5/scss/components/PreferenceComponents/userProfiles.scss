@@ -1,0 +1,61 @@
+.user-profile-wrapper {
+  @extend .d-flex, .justify-content-center, .align-items-start, .gap-20;
+  flex-wrap: wrap;
+}
+
+.user-profile {
+  @extend .ratio-squire;
+  max-width: 150px;
+  cursor: pointer;
+  .profile-image-wrapper {
+    height: 100%;
+    @extend .position-relative;
+    img.profile-image {
+      @extend .rounded-10;
+      width: 100%;
+    }
+  }
+
+  p.profile-name {
+    @extend .fw-400, .fs-18, .letter-spacing-1, .mt-10;
+    text-align: center;
+    color: darken($light, 10%);
+  }
+
+  &:hover {
+    img.profile-image {
+      outline: 2px solid rgba($light, 0.3);
+    }
+    p.profile-name {
+      color: $light;
+    }
+    &.active {
+      img.profile-image {
+        outline: 2px solid $light;
+      }
+    }
+  }
+  &.active {
+    img.profile-image {
+      outline: 2px solid $light;
+      outline-offset: 3px;
+    }
+    p.profile-name {
+      @extend .fw-500;
+      color: $light;
+    }
+  }
+}
+
+.profile-add-placeholder{
+  --size:150px;
+  outline: none;
+  background: none;
+  height: var(--size);
+  width: var(--size);
+  border: 2px dashed $highlight;
+  &:active{
+    border: 2px dashed darken($highlight,30%);
+  }
+  @extend .center,.rounded-10;
+}

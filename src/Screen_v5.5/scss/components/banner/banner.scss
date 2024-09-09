@@ -1,0 +1,14 @@
+$min-height:720px;
+
+#banner-trailer {
+    height: 140% !important;
+    width: 120% !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// @import './tv-banner.scss';
+@import './banner-slider.scss';
+// @import './single-page-banner.scss';

@@ -1,0 +1,119 @@
+@font-face {
+	font-family: 'Minion Pro';
+	src: local('Minion Pro Semibold'), local('MinionPro-Semibold'),
+			url('../fonts/MinionPro-Semibold.woff') format('woff'),
+			url('../fonts/MinionPro-Semibold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Minion Pro';
+	src: local('Minion Pro Regular'), local('MinionPro-Regular'),
+			url('../fonts/MinionPro-Regular.woff') format('woff'),
+			url('../fonts/MinionPro-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Minion Pro';
+	src: local('Minion Pro Bold'), local('MinionPro-Bold'),
+			url('../fonts/MinionPro-Bold.woff') format('woff'),
+			url('../fonts/MinionPro-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Minion Pro';
+	src: local('Minion Pro Medium'), local('MinionPro-Medium'),
+			url('../fonts/MinionPro-Medium.woff') format('woff'),
+			url('../fonts/MinionPro-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'SF Pro Display';
+	src: local('SF Pro Display Bold'), local('SFProDisplay-Bold'),
+			url('../fonts/SFProDisplay-Bold.woff') format('woff'),
+			url('../fonts/SFProDisplay-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'SF Pro Display';
+	src: local('SF Pro Display Semibold'), local('SFProDisplay-Semibold'),
+			url('../fonts/SFProDisplay-Semibold.woff') format('woff'),
+			url('../fonts/SFProDisplay-Semibold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'SF Pro Text';
+	src: local('SF Pro Text Light'), local('SFProText-Light'),
+			url('../fonts/SFProText-Light.woff') format('woff'),
+			url('../fonts/SFProText-Light.ttf') format('truetype');
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'SF Pro Display';
+	src: local('SF Pro Display Regular'), local('SFProDisplay-Regular'),
+			url('../fonts/SFProDisplay-Regular.woff') format('woff'),
+			url('../fonts/SFProDisplay-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'SF Pro Text';
+	src: local('SF Pro Text Bold'), local('SFProText-Bold'),
+			url('../fonts/SFProText-Bold.woff') format('woff'),
+			url('../fonts/SFProText-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'SF Pro Text';
+	src: local('SF Pro Text Regular'), local('SFProText-Regular'),
+			url('../fonts/SFProText-Regular.woff') format('woff'),
+			url('../fonts/SFProText-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'SF Pro Text';
+	src: local('SF Pro Text Semibold'), local('SFProText-Semibold'),
+			url('../fonts/SFProText-Semibold.woff') format('woff'),
+			url('../fonts/SFProText-Semibold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'SF Pro Text';
+	src: local('SF Pro Text Medium'), local('SFProText-Medium'),
+			url('../fonts/SFProText-Medium.woff') format('woff'),
+			url('../fonts/SFProText-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}

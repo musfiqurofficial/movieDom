@@ -1,0 +1,122 @@
+$bootstrap-sass-asset-helper: false !default;
+
+//
+// Variables
+// --------------------------------------------------
+//section
+
+$common-padding: 100px 0;
+$space-sm: 0.3rem;
+$space: 0.5rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+$section-padding: 2rem;
+
+$poster-height: 330px;
+$poster-width: $poster-height * (2 / 3);
+$cover-width: $poster-height * (16 / 9);
+
+// IITDOM theme color
+
+// ===========Light Theme==========::->>
+$black: #e3e3e3;
+$black-lt: #cccccc;
+$light: #0f1622;
+$light-lt: rgba(#141e2d, 0.7);
+$all-page-banner-linear-bg:linear-gradient(to top, rgba($black, 0.5) 5%, transparent);
+$white:#fff;
+// ============Dark Theme===========::->>
+$black: #0f1622;
+$black-lt: #141e2d;
+$light: #e3e3e3;
+$light-lt: rgba(#cccccc, 0.7);
+$all-page-banner-linear-bg:linear-gradient(to top, rgba($black, 1) 35%, transparent);
+$white:rgba(255, 255, 255, 0.10);
+
+
+
+
+
+
+
+$primary: #f68c1f;
+$primary-lt: rgba(#f68c1f, 0.5);
+$red: #ff0612;
+$highlight:rgb(0, 226, 136);
+//---->theme-shadow
+$mdom-radial-linear-bg: radial-gradient(at 100% 10%,
+  transparent 50%,
+  $black 100%),
+linear-gradient(to top, $black 5%, transparent 15%);
+$mdom-linear-bg: linear-gradient(to top, rgba($black, 50%) 5%, transparent);
+
+
+$fancy-gradient-to-bottom: linear-gradient(to bottom,
+  transparent 0%,
+  #00000030 25%,
+  #1e539e30 50%,
+  #ff308340 75%,
+  #7800a850 100%);
+$fancy-gradient-to-left: linear-gradient(to left,
+  #00000000 0%,
+  #00000000 25%,
+  #ff308330 50%,
+  #7800a890 85%,
+  #7800a8 100%);
+$card-hover-delay: 1s;
+// Colors
+$title-color: #1f202a;
+$desc-color: #716c80;
+$hover-color: #ebf7f5;
+$theme-color: #ca0a14;
+$primary-color: #f5c518;
+$border-color: #ececec;
+$black-color: #000;
+$ash-color: #f4f9fd;
+$f2-color: #f2f2f2;
+$overlay: rgba(0, 0, 0, 0.8);
+$dark-color: #f0f1f3;
+$section-bg: #dcdee3;
+$text-color: #1d2440;
+$common-bg: linear-gradient(90deg, #ff406f, #ef7f7f);
+
+// social-media color
+$facebook: #3b5998;
+$twitter: #55acee;
+$linkedin: #007bb5;
+$pinterest: #007bb5;
+$skype: #2fb7df;
+$youtube: #cd201f;
+$google: #dd4b39;
+$camera: #e4405f;
+$instagram: #e4405f;
+$tumblr: #34465d;
+$behance: #1769ff;
+$star: #e9ba17;
+$green: #0be881;
+$green-h: #0fbcf9;
+$red: #f53b57;
+$yellow: #dec32b;
+$nell: #212fb4;
+$navy: #d8e0f3;
+$plaseholder: #888;
+
+//== Typography
+
+// font-family
+$Minionpro: "Minion Pro";
+$Minionpro_reg: "SF Pro Text";
+$sf-display: "SF Pro Display";
+// font-size
+$fs-small-x: 15px !default;
+$fs-base: 16px !default;
+$fs-small: 12px;
+$fs-h1: 100px;
+$fs-h2: 60px;
+$fs-h3: 25px;
+$fs-h4: 20px;
+$fs-h5: 18px;
+$fs-h6: 16px;
+
+//  transition
+$transition: all 0.5s ease;

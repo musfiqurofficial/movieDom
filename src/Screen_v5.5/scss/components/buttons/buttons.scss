@@ -1,0 +1,254 @@
+$duration: 0.4s;
+
+@keyframes fade-out {
+  0% {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  100% {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+}
+
+.mdom-btn {
+  @extend .position-relative,
+  .py-10,
+  .px-25,
+  .rounded-6,
+  .mdom-color-light,
+  .fs-14,
+  .fw-600;
+  border: none !important;
+  outline: none !important;
+  background: $primary;
+  color: white;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  overflow: hidden;
+  &:hover{
+    color: white;
+    background: darken($primary, 20%);
+  }
+
+  &:active {
+    border: none;
+    outline: none;
+  }
+
+  .initial-content {
+    @extend .position-absolute, .top-50, .left-50, .h-100, .w-100;
+    transition: all $duration cubic-bezier(0.27, 0.68, 1, 1.25);
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    &.one {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+      background: inherit !important;
+    }
+
+    &.two {
+      clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+      background: inherit !important;
+    }
+  }
+
+  .hover-content {
+    @extend .d-inline-flex,
+    .justify-content-center,
+    .align-items-center,
+    .bg-inherit;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all $duration ease;
+  }
+
+  //   &::after {
+  //     content: "";
+  //     position: absolute;
+  //     top: 50%;
+  //     left: 50%;
+  //     transform: translate(-50%, -50%);
+  //     height: 5%;
+  //     width: 0%;
+  //     opacity: 0;
+  //     transition: width 0.8 ease;
+  //     background: $light;
+  //     display: inline-block;
+  //   }
+  &:hover {
+    background: darken($primary, 3%);
+
+    // &::after {
+    //   opacity: 1;
+    //   width: 100%;
+    //   background: transparent !important;
+    // }
+    .initial-content {
+      opacity: 0 !important;
+      visibility: hidden !important;
+
+      &.one {
+        top: -100% !important;
+      }
+
+      &.two {
+        top: 100% !important;
+      }
+    }
+
+    .hover-content {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+  }
+}
+
+.btn {
+  @extend .px-20, .py-10, .letter-spacing-1, .letter-spacing-1;
+  box-shadow: none !important;
+  color: $light;
+  background: rgba($light, 0.25);
+  border: none !important;
+  outline: none !important;
+
+  &:hover {
+    color: $light;
+    background: rgba($light, 0.25);
+  }
+
+  &:active {
+    color: $light;
+    background: rgba($light, 0.05);
+  }
+
+  &:focus {
+    box-shadow: none !important;
+    color: $light;
+    background: rgba($light, 0.25);
+  }
+
+  &.btn-danger {
+    background: $primary;
+
+    &:hover {
+      background: darken($primary, 10);
+    }
+  }
+}
+
+.white-btn {
+  background: rgba($light, 0.1);
+
+  &:hover {
+    background: $primary;
+  }
+}
+
+@each $name,
+$value in $theme {
+  .btn-#{$name} {
+    @extend .btn;
+    color: $light;
+    background: $value;
+
+    &:hover {
+      color: $light;
+      background: darken($value, 15%);
+    }
+
+    &:active {
+      color: $light;
+      background: darken($value, 20%);
+    }
+
+    &:focus {
+      box-shadow: none !important;
+      color: $light;
+      background: darken($value, 20%);
+    }
+  }
+}
+
+.btn-light {
+  @extend .btn;
+  color: $dark;
+  background: $light, 5%;
+
+  &:hover {
+    color: $dark;
+    background: darken($light, 5%);
+  }
+
+  &:active {
+    color: $dark;
+    background: darken($light, 5%);
+  }
+
+  &:focus {
+    box-shadow: none !important;
+    color: $dark;
+    background: $light;
+  }
+}
+
+.primary-gradient {
+  background: linear-gradient(to top, darken($primary, 10), lighten($primary, 10)) !important;
+  transition: all 0.2s linear;
+
+  &:hover {
+    background: linear-gradient(to top, darken($primary, 25), lighten($primary, 10)) !important;
+  }
+}
+
+.glowing-btn {
+  @extend .position-relative, .overflow-hidden;
+
+  &::after {
+    @extend .position-absolute, .top-0, .left-0, .h-100, .w-100;
+    content: "";
+    background: linear-gradient(45deg, transparent, #ffffff40, transparent);
+    transform: translate(-100%, 100%);
+    transition: all 0.6s ease;
+    animation: glowing 2.2s ease-in-out infinite;
+  }
+
+  &:hover {
+    &:after {
+      transform: translate(100%, -100%);
+    }
+  }
+}
+
+@keyframes glowing {
+
+  0%,
+  100% {
+    transform: translate(-100%, 100%);
+  }
+
+  50% {
+    transform: translate(100%, -100%);
+  }
+}
+
+;
+
+.login-btn {
+  background: linear-gradient(45deg, darken($primary, 5), $primary);
+  padding: 8px 14px !important;
+  color: $dark;
+
+  &:hover {
+    background: linear-gradient(45deg, darken($primary, 10), $primary);
+  }
+}
+
+
+
+@import './custom-button.scss';

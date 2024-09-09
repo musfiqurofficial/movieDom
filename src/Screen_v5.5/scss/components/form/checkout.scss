@@ -1,0 +1,6 @@
+.rccs__cvc {
+  color: $dark !important;
+}
+.rccs__card--unknown > div {
+  background:linear-gradient(45deg, lighten($dark,5%), lighten($dark,3%)) !important;
+}
